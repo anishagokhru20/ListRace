@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/fdd870ea48.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .first-section{
+            /* border:2px solid black; */
+            height: 950px;
+        }
+        header{
+            width:100%;
+            height:100vh;
+            background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.5)),url(banner.jpg);
+            /* background-size: cover; */
+            font-family: sans-serif;
+        }
+        nav{
+            background-color: white;
+            color:black;
+            height: 100px;
+            width:100%;
+            display: flex;
+            position: fixed;
+            z-index: 1;
+        }
+        .header-left{
+            width: 35%;
+            height: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: center;
+            align-items: center;       
+        }
+        .header-left span{
+             position: relative;
+             right: 100px;
+             color: red;
+             font-weight: bolder;
+             font-size: 20px;
+        }
+        .header-right{
+            width: 65%;
+            height: 100%;
+            /* border: 2px solid black; */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .header-right a{
+             font-size: 15px;
+        }
+        .main-heading{
+             color:white;
+             position: absolute;
+             top:40%;
+             left:50%;
+             transform: translate(-50%,-50%); 
+
+        }
+        .main-heading p{
+            font-size: 20px;
+        }
+        .main-heading h1{
+            font-weight: bolder;
+            font-size: 38px;
+            text-align: center;
+        }
+        .white-box{
+             background-color: white;
+             /* border: 2px solid red; */
+             display: flex;
+             justify-content: center;
+             justify-content: space-around;
+             width: 65%;
+             height: 70px;
+             align-items: center;
+        }
+        .main-box{
+            display: flex;
+            /* border: 2px solid blue; */
+            justify-content: center;
+            column-gap: 30px;
+            position: relative;
+            bottom: 250px;
+        }
+        .search-box button{
+            height: 70px;
+            width: 150px;
+            background-color: #ff545a;
+            color:white;
+        }
+        .main-fields{
+            display: flex;
+            /* border:8px solid black; */
+            justify-content: center;
+            column-gap: 30px;
+            position: relative;
+            bottom: 180px;
+        }
+        .main-fields-box1 img{
+            height: 60px;
+        }
+        .main-fields-box1{
+            /* border: 2px solid red; */
+            width: 200px;
+            height: 160px;
+            display: flex;
+            padding: 15px;
+            background-color: white;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px solid white;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+        }
+        .main-fields-box1:hover{
+            background-color: #ff545a;
+            color: white;
+        }
+        .main-fields-box1:hover img{
+            filter: invert(1);
+        }
+        /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Second Section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+        .second-section-heading,.third-section-heading,.fourth-section-heading{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+        }
+        .second-section-heading h1,.third-section-heading h1,.fourth-section-heading h1{
+            color:#343a3f;
+            font-weight: 550;
+            font-family: sans-serif;
+        }
+        .second-section-heading p,.third-section-heading p,.fourth-section-heading p{
+            color:#859098;
+            font-family: sans-serif;
+            font-size: 17px;
+            margin: 0;
+        }
+        .ss-firstbox,.ss-secondbox,.ss-thirdbox,.ss-fourthbox,.ss-fivthbox,.ss-sixthbox{
+            width: 370px;
+            /* border:2px solid black; */
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+        }
+        /* .ss-firstbox:hover > div:nth-child(1)> .hidden-box {
+           position: absolute;
+           z-index: 1;
+           top: 31vh;
+        }
+        .hidden-box{
+            position: absolute;
+            z-index:-1; 
+            top: 34vh;
+            transition: ease-in; 
+            transition-duration: 0.3s;
+        } */
+        .ss-firstbox:hover > div:nth-child(1) > .hidden-box{
+            position: absolute;
+            z-index: 1;
+            top:31vh;
+        }
+        .ss-thirdbox:hover > div:nth-child(1) > .hidden-box{
+            position: absolute;
+            z-index: 1;
+            top:31vh;
+        }
+        .ss-secondbox:hover > div:nth-child(1) > .hidden-box{
+            position: absolute;
+            z-index: 1;
+            top:31vh;
+        }
+        .hidden-box button{
+             background-color: #ff545a;
+             color:white;
+             border-radius: 3px;
+             border: none;
+             font-size: 12px;
+             position: relative;
+             left:15px;
+             height: 21px;
+        }
+        .hidden-box{
+            position: absolute;
+            z-index: -1;
+            top:34vh;
+            transition: ease-in;
+            transition-duration: 0.3s;
+            display: flex;
+            column-gap: 230px;
+        }
+        .hidden-box div span i{
+            color: #cbcccd;
+            background-color: #252d32;
+            padding: 6px 6px;
+            font-size: 15px;
+        }
+        .hidden-box div span i:hover{
+            color:cornflowerblue;
+        }
+        .second-section-topbox,.second-section-bottombox{
+            display: flex;
+            justify-content: center;
+            column-gap: 40px;
+            position: relative;
+            top: 70px;
+        }
+        .second-section{
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            height:1250px;
+            background-color: #f8fafb;
+        }
+        .second-section-bottombox{
+            display: flex;
+        }
+         /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Third Section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+        .third-section{
+            height:650px;
+        }
+        .third-section-firstbox,.third-section-secondbox,.third-section-thirdbox{
+             width: 350px;
+             position: relative;
+             top: 200px;
+             height: 200px;
+             padding-top: 40px;
+             padding-left: 20px;
+             box-shadow: 0px 0px 8px rgba(0,0,0,0.5); 
+        }
+
+        .third-section-firstbox img,.third-section-secondbox img,.third-section-thirdbox img{
+            height: 70px;
+            position: relative;
+            left: 20px;
+        }
+        .third-section-firstbox p,.third-section-secondbox p,.third-section-thirdbox p{
+            margin: 0;
+            color: #859098;
+
+        }
+        .third-section-heading {
+            position: relative;
+            top:150px;
+        }
+        .third-section-firstbox div:nth-child(1),.third-section-secondbox div:nth-child(1),.third-section-thirdbox div:nth-child(1){
+            display: flex;
+            column-gap: 40px;
+        }
+         /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Fourth Section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+        .fourth-section{
+            height: 750px;
+        }
+        .fourth-section-content{
+            display: flex;  
+            height: 600px;
+            width: 100%;  
+            /* border:2px solid black;  */
+            justify-content: center;
+            column-gap: 30px;
+            position: relative;
+            top: 100px;
+        }
+        .fourth-section-box{
+           width: 370px;
+           height: 460px;
+           box-shadow: 0px 0px 8px rgba(0,0,0,0.5); 
+        }
+        .fourth-section-box div{
+            padding: 8px 30px;
+        }
+        .fourth-section-box div p{
+            color:#859098;
+            position: relative;
+            top:20px;
+        }
+        .fourth-section-box div h4{
+              color: #343a3f;
+        }
+        .fourth-section-box div span{
+            color:#859098;
+            position: relative;
+            top: 10px;
+        }
+        .fourth-section-box div h4{
+            margin: 0;
+            line-height: 25px;
+        }
+        .fourth-section-box:hover h4{
+              color: #ff545a;
+        }
+        .fourth-section-box:hover{
+            box-shadow: 0 10px 20px rgba(21,19,19,.4);
+        }
+         /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Fifth Section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+        .fifth-section{
+            height: 450px;
+            background-color:#f8fafb ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fifth-section-content h2{
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .fifth-section-content p{
+            color: #7b8088;
+            font-size: 17px;
+            font-weight: 550;
+        }
+        .fifth-section-content{
+            height: 300px;
+            width: 850px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .fifth-section-content div input{ 
+             height: 50px;
+             width: 400px;
+        }
+        .fifth-section-content div button{
+            height:55px;
+            width: 150px;
+            background-color: #ff545a;
+            color: white;
+            font-size: 16px;
+        }
+        .fifth-section-content div{
+            height: 55px;
+            /* border: 2px solid blue; */
+            position: relative;
+            top: 40px;
+        }
+       .fifth-section-content div:hover{
+        box-shadow: 10px 10px 20px rgba(21,19,19,.1);
+       }
+         /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~sixth Section~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+       .sixth-section{
+           height: 350px;
+       }
+       .ss-header{
+            display: flex;
+       }
+       .ss-left{
+             color: red;
+             font-weight: bolder;
+             font-size: 20px;
+             width: 45%;
+             height: 80px;
+             display: flex;
+             align-items: center;
+       }
+       .ss-right{
+        width: 55%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+       }
+       .ss-right a{
+          color:#859098;
+          font-size: 15px;
+       }
+       .ss-left span{
+             position: relative;
+             left: 100px;
+       }
+       .ss-footer{
+          display: flex;
+          position: relative;
+          top: 20px;
+       }
+       .ss-footer div:nth-child(1){
+         width: 50%;
+       }
+       .ss-footer div:nth-child(2){
+        width: 50%;
+        /* border: 4px solid red; */
+        display: flex;
+        justify-content: end;
+        align-items: center;
+       }
+       .socials{
+         display: flex;
+         column-gap: 20px;
+         justify-content: start !important;
+         position: relative;
+         left: 20px;
+       }
+       .socials i{
+       padding:10px 12px;
+       font-size:15px;
+       border-radius:50%;
+       color:#859098;
+       background-color:#f8fafb 
+       }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <section class="first-section">
+        <header>
+                <nav>
+                      <div class="header-left">
+                            <span><b style="color: black;font-weight: bolder;">List</b>Race</span>
+                      </div>
+                      <div class="header-right">
+                        <a>HOME</a>
+                        <a>HOW IT WORKS</a>
+                        <a>EXPLORE</a>
+                        <a>REVIEW</a>
+                        <a>BLOG</a>
+                        <a>CONTACT</a>
+                      </div>
+                </nav>
+        </header>
+        <section class="main-content">
+             <div class="main-heading">
+                     <h1>BEST &nbsp;PLACE&nbsp; TO &nbsp;FIND&nbsp; AND&nbsp; EXPLORE</h1>
+                     <h1>THAT ALL YOU NEED</h1>
+                    <p>Find Best Place, Restaurant, Hotel, Real State and many more think in just One click</p>
+             </div>            
+             <div class="main-box">
+                     <div class="white-box">
+                            <div>
+                                   <span style="font-size: 20px;color:#343a3f;font-weight: 500;">What?</span>&nbsp;&nbsp;
+                                   <span style="font-size: 14px;color:#859098;font-weight: 550;">Ex: Palace,Restaurant,Food,Automobile</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                   <span><i class="fa-solid fa-bars" style="font-size: 20px;"></i></span>
+                            </div>
+                            <div>
+                                  <span style="font-size:20px;color: #343a3f;font-weight: 500;">Location</span>&nbsp;&nbsp;
+                                  <span style="font-size: 14px;color:#859098;font-weight: 550;">Ex: London,New York, Rome</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <span><i class="fa-sharp fa-solid fa-location-crosshairs" style="font-size: 20px;"></i></span>
+                            </div> 
+                     </div>
+                     <div class="search-box">
+                           <button>Search</button>
+                           <i class="fa-sharp fa-regular fa-magnifying-glass"></i>
+                     </div>
+             </div>
+             <div class="main-fields">
+                    <div class="main-fields-box1">
+                        <img src="images2/restaurant.png" >
+                        <h1>Restaurant</h1>
+                        <p style="margin: 0;">150 listings</p>
+                    </div>
+                    <div class="main-fields-box1">
+                        <img src="images2/restaurant.png" >
+                        <h1>Destination</h1>
+                        <p style="margin: 0;">214 listings</p>
+                    </div>
+                    <div class="main-fields-box1">
+                        <img src="images2/hotel.png" >
+                        <h1>Hotels</h1>
+                        <p style="margin: 0;">185 listings</p>
+                    </div>
+                    <div class="main-fields-box1">
+                        <img src="images2/capsules.png" >
+                        <h1>Healthcare</h1>
+                        <p style="margin: 0;">200 listings</p>
+                    </div>
+                    <div class="main-fields-box1">
+                        <img src="images2/smart-car.png" >
+                        <h1>Automation</h1>
+                        <p style="margin: 0;">120 listings</p>
+                    </div>
+             </div>
+        </section>
+    </section>
+    <section class="second-section">
+           <div class="second-section-heading">
+                 <h1>EXPLORE</h1>
+                 <p>Explore New place, food, culture around the world and many more</p>
+           </div>
+           <div class="second-section-topbox">
+                 <div class="ss-firstbox">
+                        <div>
+                            <img src="images2/e1.jpg"/>  
+                            <div class="hidden-box">
+                                 <button>Best Rated</button>
+                                 <div>
+                                    <span><i class="fa fa-arrows-alt"></i></span>
+                                    <span><i class="fa fa-bookmark-o"></i></span>
+                                 </div>
+                            </div>
+                        </div>
+                       
+                        <div>
+                            <h3 style="color:#343a3f;font-family: sans-serif;position: relative;left: 10px;font-weight: 550;">Tommy Hilfinger Bar</h3>
+                            <div style="display: flex;justify-content: space-around;width: 350px;position: relative;left: 10px;color: #859098;">
+                                   <span style="background-color:#70a9ff;padding:4px;font-size: 12px;color:white;font-weight: bolder;border-radius: 5px;">5.0</span>
+                                   <span>10 Ratings</span>
+                                   <span>|</span>
+                                   <span>Form 5$-300$</span>
+                                   <span>|</span>
+                                   <span>Restaurant</span>
+                            </div>
+                            <div style="display: flex;justify-content: space-around;column-gap: 32px">
+                                 <img src="images2/c1.png" style="position: relative;left: 10px;height: 50px;top: 10px;">
+                                 <p style="font-size: 14px;color: #859098;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....</p>
+                            </div>
+                            <hr>
+                            <div style="display: flex;justify-content:space-around;column-gap: 50px;">
+                                 <p style="position: relative;right:20px;color: red;">Close Now</p>
+                                 <div style="display: flex;column-gap: 25px;position: relative;top:15px">
+                                    <span><i class="fa-solid fa-location-dot"></i></span>
+                                     <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                                     <span><i class="fa-regular fa-heart"></i></span>
+                                 </div>
+                            
+                            </div>
+                        </div>
+                 </div>
+                 <div class="ss-secondbox">
+                   <div>
+                         <img src="images2/e2.jpg"/>
+                         <div class="hidden-box">
+                             <button>Featured</button>
+                             <div>
+                                <span><i class="fa fa-arrows-alt"></i></span>
+                                <span><i class="fa fa-bookmark-o"></i></span>
+                             </div>
+                         </div>
+                   </div>
+                    <div>
+                        <h3 style="color:#343a3f;font-family: sans-serif;position: relative;left: 10px;font-weight: 550;">Swim And Dine Resort</h3>
+                        <div style="display: flex;justify-content: space-around;width: 350px;position: relative;left: 10px;color: #859098;">
+                               <span style="background-color:#00c61c;;padding:4px;font-size: 12px;color:white;font-weight: bolder;border-radius: 5px;">4.5</span>
+                               <span>8 Ratings</span>
+                               <span>|</span>
+                               <span>Form 50$-500$</span>
+                               <span>|</span>
+                               <span>Hotel</span>
+                        </div>
+                        <div style="display: flex;justify-content: space-around;column-gap: 32px">
+                             <img src="images2/c1.png" style="position: relative;left: 10px;height: 50px;top: 10px;">
+                             <p style="font-size: 14px;color: #859098;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....</p>
+                        </div>
+                        <hr>
+                        <div style="display: flex;justify-content:space-around;column-gap: 50px;">
+                             <p style="position: relative;right:20px;color:#00c61c;">Open Now</p>
+                             <div style="display: flex;column-gap: 25px;position: relative;top:15px">
+                                <span><i class="fa-solid fa-location-dot"></i></span>
+                                 <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                                 <span><i class="fa-regular fa-heart"></i></span>
+                             </div>
+                        
+                        </div>
+                    </div>
+                 </div>
+                 <div class="ss-thirdbox">
+                       <div>
+                        <img src="images2/e3.jpg"/>
+                        <div class="hidden-box">
+                            <button>Best Rated</button>
+                            <div>
+                               <span><i class="fa fa-arrows-alt"></i></span>
+                               <span><i class="fa fa-bookmark-o"></i></span>
+                            </div>
+                       </div>
+                       </div>
+                    <div>
+                        <h3 style="color:#343a3f;font-family: sans-serif;position: relative;left: 10px;font-weight: 550;">Swim And Dine Resort</h3>
+                        <div style="display: flex;justify-content: space-around;width: 350px;position: relative;left: 10px;color: #859098;">
+                               <span style="background-color:#ffcc5d;;padding:4px;font-size: 12px;color:white;font-weight: bolder;border-radius: 5px;">4.5</span>
+                               <span>15 Ratings</span>
+                               <span>|</span>
+                               <span>Form 5k$-10k$</span>
+                               <span>|</span>
+                               <span>Destination</span>
+                        </div>
+                        <div style="display: flex;justify-content: space-around;column-gap: 32px">
+                             <img src="images2/c1.png" style="position: relative;left: 10px;height: 50px;top: 10px;">
+                             <p style="font-size: 14px;color: #859098;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....</p>
+                        </div>
+                        <hr>
+                        <div style="display: flex;justify-content:space-around;column-gap: 50px;">
+                             <p style="position: relative;right:20px;color: red;">Close Now</p>
+                             <div style="display: flex;column-gap: 25px;position: relative;top:15px">
+                                <span><i class="fa-solid fa-location-dot"></i></span>
+                                 <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                                 <span><i class="fa-regular fa-heart"></i></span>
+                             </div>
+                        
+                        </div>
+                 </div>
+                </div>
+           </div>
+            <div class="second-section-bottombox">
+            <div class="ss-fourthbox">
+                <img src="images2/e4.jpg"/>
+                <div>
+                    <h3 style="color:#343a3f;font-family: sans-serif;position: relative;left: 10px;font-weight: 550;">Bungalow With Swimming Pool</h3>
+                    <div style="display: flex;justify-content: space-around;width: 350px;position: relative;left: 10px;color: #859098;">
+                           <span style="background-color:#ffcc5d;;padding:4px;font-size: 12px;color:white;font-weight: bolder;border-radius: 5px;">4.5</span>
+                           <span>15 Ratings</span>
+                           <span>|</span>
+                           <span>Form 5k$-10k$</span>
+                           <span>|</span>
+                           <span>Destination</span>
+                    </div>
+                    <div style="display: flex;justify-content: space-around;column-gap: 32px">
+                         <img src="images2/c1.png" style="position: relative;left: 10px;height: 50px;top: 10px;">
+                         <p style="font-size: 14px;color: #859098;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....</p>
+                    </div>
+                    <hr>
+                    <div style="display: flex;justify-content:space-around;column-gap: 50px;">
+                         <p style="position: relative;right:20px;color: red;">Close Now</p>
+                         <div style="display: flex;column-gap: 25px;position: relative;top:15px">
+                            <span><i class="fa-solid fa-location-dot"></i></span>
+                             <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                             <span><i class="fa-regular fa-heart"></i></span>
+                         </div>
+                    
+                    </div>
+                </div>
+             </div>
+             <div class="ss-fivthbox">
+                <img src="images2/e5.jpg"/>
+                <div>
+                    <h3 style="color:#343a3f;font-family: sans-serif;position: relative;left: 10px;font-weight: 550;">Vintage Car Expo</h3>
+                    <div style="display: flex;justify-content: space-around;width: 350px;position: relative;left: 10px;color: #859098;">
+                           <span style="background-color:#ffcc5d;;padding:4px;font-size: 12px;color:white;font-weight: bolder;border-radius: 5px;">4.5</span>
+                           <span>15 Ratings</span>
+                           <span>|</span>
+                           <span>Form 5k$-10k$</span>
+                           <span>|</span>
+                           <span>Destination</span>
+                    </div>
+                    <div style="display: flex;justify-content: space-around;column-gap: 32px">
+                         <img src="images2/c1.png" style="position: relative;left: 10px;height: 50px;top: 10px;">
+                         <p style="font-size: 14px;color: #859098;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....</p>
+                    </div>
+                    <hr>
+                    <div style="display: flex;justify-content:space-around;column-gap: 50px;">
+                         <p style="position: relative;right:20px;color:#00c61c">Open Now</p>
+                         <div style="display: flex;column-gap: 25px;position: relative;top:15px">
+                            <span><i class="fa-solid fa-location-dot"></i></span>
+                             <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                             <span><i class="fa-regular fa-heart"></i></span>
+                         </div>
+                    
+                    </div>
+                 </div>
+             </div>
+             <div class="ss-sixthbox">
+                <img src="images2/e6.jpg"/>
+                <div>
+                    <h3 style="color:#343a3f;font-family: sans-serif;position: relative;left: 10px;font-weight: 550;">Thailand Tour</h3>
+                    <div style="display: flex;justify-content: space-around;width: 350px;position: relative;left: 10px;color: #859098;">
+                           <span style="background-color:#ffcc5d;;padding:4px;font-size: 12px;color:white;font-weight: bolder;border-radius: 5px;">4.5</span>
+                           <span>15 Ratings</span>
+                           <span>|</span>
+                           <span>Form 5k$-10k$</span>
+                           <span>|</span>
+                           <span>Destination</span>
+                    </div>
+                    <div style="display: flex;justify-content: space-around;column-gap: 32px">
+                         <img src="images2/c1.png" style="position: relative;left: 10px;height: 50px;top: 10px;">
+                         <p style="font-size: 14px;color: #859098;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut labore et dolore magna aliqua....</p>
+                    </div>
+                    <hr>
+                    <div style="display: flex;justify-content:space-around;column-gap: 50px;">
+                         <p style="position: relative;right:20px;color: red;">Close Now</p>
+                         <div style="display: flex;column-gap: 25px;position: relative;top:15px">
+                            <span><i class="fa-solid fa-location-dot"></i></span>
+                             <span><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                             <span><i class="fa-regular fa-heart"></i></span>
+                         </div>       
+                    </div>
+             </div>
+            </div>    
+    </section>
+    <section class="third-section">
+           <div class="third-section-heading">
+            <h1>CLIENTS REVIEWS</h1>
+            <p>What our client say about us</p>
+          </div>
+           <div style="display: flex;justify-content: center;column-gap: 25px;">
+                 <div class="third-section-firstbox">
+                         <div>
+                                <img src="images2/c1.png">
+                                <div>
+                                    <h3 style="margin: 0;color:#343a3f;">Tom Leakar</h3>
+                                    <p>London,UK</p>
+                                    <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                                    <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                                    <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                                    <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                                    <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span> 
+                                </div>
+                         </div>
+                         <div>
+                             <p style="  position: relative;
+                             top: 20px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.</p>
+                         </div>
+                 </div>
+                 <div class="third-section-secondbox" >
+                    <div>
+                        <img src="images2/c1.png">
+                        <div>
+                            <h3 style="margin: 0;color: #343a3f;">Monirul Islam</h3>
+                            <p>London,UK</p>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span> 
+                        </div>
+                    </div>
+                    <div>
+                     <p style="  position: relative;
+                     top: 20px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.</p>
+                    </div>
+                 </div>
+                 <div class="third-section-thirdbox">
+                    <div style="display: flex;color: #343a3f;">
+                        <img src="images2/c1.png">
+                        <div>
+                            <h3 style="margin: 0;">Shohrab Hossain</h3>
+                            <p>London,UK</p>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span>
+                            <span><i class="fa-solid fa-star" style="color:#ffda2b"></i></span> 
+                        </div>
+                 </div>
+                 <div>
+                     <p style="  position: relative; top: 20px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis eaque.</p>
+                 </div>
+                 </div>
+           
+           </div>
+           <div>
+            
+           </div>
+           <div>
+
+           </div>
+    </section>
+    <section class="fourth-section">
+        <div class="fourth-section-heading" style="position: relative;top: 30px;">
+            <h1>NEWS AND ARTICLE</h1>
+            <p>Always upto date with our latest News and Articles</p>
+          </div>
+          <div class="fourth-section-content"> 
+               <div class="fourth-section-box">
+                      <img src="images2/b1.jpg">
+                      <div>
+                             <h4>How to find your Desired Place more</h4>
+                             <h4> quickly</h4>
+                             <span>Posted By <b style="color: black;font-weight: 550;font-family: sans-serif;">ADMIN</b></span>&nbsp;&nbsp;
+                             <span>|</span>&nbsp;&nbsp;
+                             <span>March 2045</span>
+                             <p>Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.</p>
+                      </div>
+               </div>
+               <div class="fourth-section-box">
+                    <img src="images2/b2.jpg">
+                      <div>
+                        <h4>How to find your Desired Place more</h4>
+                        <h4> quickly</h4>
+                        <span>Posted By <b style="color: black;font-weight: 550;font-family: sans-serif;">ADMIN</b></span>&nbsp;&nbsp;
+                        <span>|</span>&nbsp;&nbsp;
+                        <span>March 2045</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.</p>
+                    </div>
+                </div>
+                <div class="fourth-section-box">
+                    <img src="images2/b3.jpg">
+                    <div>
+                        <h4>How to find your Desired Place more</h4>
+                        <h4> quickly</h4>
+                        <span>Posted By <b style="color: black;font-weight: 550;font-family: sans-serif;">ADMIN</b></span>&nbsp;&nbsp;
+                        <span>|</span>&nbsp;&nbsp;
+                        <span>March 2045</span>
+                        <p>Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.</p>
+                    </div>
+                 </div>
+          </div>
+    </section>
+    <section class="fifth-section">
+            <div class="fifth-section-content">
+                 <h2>DO YOU WANT TO ADD YOUR BUSINESS LISTING WITH US?</h2>
+                 <p>Listrace offer you to list your business with us and we very much able to promote your Business</p>
+                 <div>
+                    <input type="text" placeholder="Enter your email here"/>
+                    <button>Create Account</button>
+                 </div>
+            </div>
+    </section>
+    <section class="sixth-section">
+           <div class="ss-header">
+              <div class="ss-left">
+                <span><b style="color: black;font-weight: bolder;">List</b>Race</span>
+              </div>
+              <div class="ss-right">
+                    <a>HOW IT WORKS</a>
+                    <a>EXPLORE</a>
+                    <a>REVIEW</a>
+                    <a>BLOG</a>
+                    <a>CONTACT</a>
+                    <a>MY ACCOUNT</a>
+               </div>
+           </div>
+           <hr>
+           <div class="ss-footer">
+            <div>
+                <p style="color: #859098; position: relative;
+                left: 90px;">© Copyright. Designed And Developed By Themesine</p>
+            </div>
+            <div>
+                <span>+1 (222) 777 8888</span>
+                <div class="socials">
+                    <span><i class="fa-brands fa-facebook-f"></i></span>
+                    <span><i class="fa-brands fa-twitter"></i></span>
+                    <span><i class="fa-brands fa-linkedin"></i></span>
+                    <span><i class="fa-brands fa-google-plus-g"></i></span>
+                </div>
+               
+               
+               
+               
+            </div>
+           </div>
+
+    </section>
+   
+</body>
+</html>-
